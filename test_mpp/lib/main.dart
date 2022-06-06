@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
@@ -173,36 +174,42 @@ class ContactCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 300,
-      margin: EdgeInsets.symmetric(vertical: 10),
-      decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.grey,
-            width: 1,
-          ),
-          borderRadius: BorderRadius.circular(12)),
-      padding: EdgeInsets.all(20),
-      child: Column(
-        children: const <Widget>[
-          Align(
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 7),
-              child: Text(
-                'Dupont Jean-Pierre',
-                style: TextStyle(fontSize: 18),
+    return InkWell(
+      child: Container(
+        width: 300,
+        margin: EdgeInsets.symmetric(vertical: 10),
+        decoration: BoxDecoration(
+            border: Border.all(
+              color: Color(0xFFDADADA),
+              width: 1,
+            ),
+            borderRadius: BorderRadius.circular(12)),
+        padding: EdgeInsets.all(20),
+        child: Column(
+          children: const <Widget>[
+            Align(
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 7),
+                child: Text(
+                  'Dupont Jean-Pierre',
+                  style: TextStyle(fontSize: 18),
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 7),
-            child: Text(
-              '06-12-34-56-78',
-              style: TextStyle(fontSize: 14),
-            ),
-          )
-        ],
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 7),
+              child: Text(
+                '06-12-34-56-78',
+                style: TextStyle(fontSize: 14),
+              ),
+            )
+          ],
+        ),
       ),
+      onTap: () async {
+        if (!await launchUrl(Uri.parse('https://www.google.com')))
+          throw 'Could not launch https://www.google.com';
+      },
     );
   }
 }
