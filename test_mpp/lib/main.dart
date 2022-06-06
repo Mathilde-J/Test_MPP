@@ -124,6 +124,16 @@ class PageContact extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('page contact'),
+        actions: [
+          IconButton(
+            onPressed: () => {
+              Navigator.pop(
+                context,
+              )
+            },
+            icon: Icon(Icons.close),
+          ),
+        ],
       ),
     );
   }
