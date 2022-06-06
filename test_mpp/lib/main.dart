@@ -135,17 +135,23 @@ class PageContact extends StatelessWidget {
           ),
         ],
       ),
-      body: Container(
-        padding: EdgeInsets.all(20),
-        child: Center(
-          child: Column(
-            children: [
-              ContactCard(),
-              ContactCard(),
-              ContactCard(),
-              ContactCard(),
-              ContactCard(),
-            ],
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.all(20),
+          child: Center(
+            child: Column(
+              children: const <Widget>[
+                ContactCard(),
+                ContactCard(),
+                ContactCard(),
+                ContactCard(),
+                ContactCard(),
+                ContactCard(),
+                ContactCard(),
+                ContactCard(),
+                ContactCard(),
+              ],
+            ),
           ),
         ),
       ),
