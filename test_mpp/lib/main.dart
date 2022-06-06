@@ -14,8 +14,22 @@ class MyApp extends StatelessWidget {
       title: 'Test Application MPP',
       home: Scaffold(
         body: Center(
-          child: Text('Hello'),
+          child: ContactButton(),
         ),
+      ),
+    );
+  }
+}
+
+class ContactButton extends StatelessWidget {
+  const ContactButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () => {print('test')},
+      child: const Text(
+        'Page contact',
       ),
     );
   }
