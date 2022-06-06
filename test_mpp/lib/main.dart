@@ -187,17 +187,20 @@ class ContactCard extends StatelessWidget {
         children: const <Widget>[
           Align(
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
+              padding: EdgeInsets.symmetric(vertical: 7),
               child: Text(
                 'Dupont Jean-Pierre',
                 style: TextStyle(fontSize: 18),
               ),
             ),
           ),
-          Text(
-            '06-12-34-56-78',
-            style: TextStyle(fontSize: 14),
-          ),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 7),
+            child: Text(
+              '06-12-34-56-78',
+              style: TextStyle(fontSize: 14),
+            ),
+          )
         ],
       ),
     );
