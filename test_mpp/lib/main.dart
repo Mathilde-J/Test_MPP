@@ -17,13 +17,13 @@ class MyApp extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: <Widget>[
               ContactButtons(),
               SizedBox(
                 height: 30,
               ),
-              SizedBox(
-                height: 65,
+              Container(
+                height: 70,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: const [
