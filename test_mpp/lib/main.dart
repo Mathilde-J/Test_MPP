@@ -123,7 +123,7 @@ class PageContact extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('page contact'),
+        title: Text('Page contact'),
         actions: [
           IconButton(
             onPressed: () => {
@@ -135,6 +135,58 @@ class PageContact extends StatelessWidget {
           ),
         ],
       ),
+      body: Container(
+        padding: EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.grey,
+            width: 1,
+          ),
+        ),
+        child: Column(
+          children: const <Widget>[
+            Align(
+              child: Text(
+                'Dupont Jean-Pierre',
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+            Text(
+              '06-12-34-56-78',
+              style: TextStyle(fontSize: 14),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
+
+
+// Container(
+//         child: Padding(
+//           padding: EdgeInsets.all(20),
+//           child: Container(
+//             decoration: BoxDecoration(
+//               border: Border.all(
+//                 color: Colors.grey,
+//                 width: 1,
+//               ),
+//             ),
+//             child: Column(
+//               children: const <Widget>[
+//                 Align(
+//                   child: Text(
+//                     'Dupont Jean-Pierre',
+//                     style: TextStyle(fontSize: 18),
+//                   ),
+//                 ),
+//                 Text(
+//                   '06-12-34-56-78',
+//                   style: TextStyle(fontSize: 14),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ),
+//       ),
