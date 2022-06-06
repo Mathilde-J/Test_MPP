@@ -1,0 +1,20 @@
+### sources utilisées :
+- https://devstory.net/13105/flutter-center
+- https://material.io/components/buttons/flutter#text-button
+- https://docs.flutter.dev/cookbook/navigation/navigation-basics
+- https://stackoverflow.com/questions/49991444/create-a-rounded-button-button-with-border-radius-in-flutter
+- https://api.flutter.dev/flutter/material/AppBar-class.html
+- https://stackoverflow.com/questions/51638176/under-which-circumstances-textalign-property-works-in-flutter
+- https://stackoverflow.com/questions/66642636/how-to-change-the-shape-of-my-elevatedbutton
+- https://stackoverflow.com/questions/53141752/set-the-space-between-elements-in-row-flutter
+- https://docs.flutter.dev/cookbook/lists/horizontal-list
+- https://api.flutter.dev/flutter/painting/BoxDecoration-class.html
+- https://stackoverflow.com/questions/51545768/flutter-vertically-center-column
+- https://www.codegrepper.com/code-examples/dart/scrollable+container+flutter
+- https://stackoverflow.com/questions/44317188/flutter-ontap-method-for-containers
+- https://stackoverflow.com/questions/43583411/how-to-create-a-hyperlink-in-flutter-widget
+- https://pub.dev/packages/url_launcher
+- https://blog.logrocket.com/launching-urls-flutter-url_launcher/
+- https://dev-yakuza.posstree.com/en/flutter/url_launcher/
+- https://stackoverflow.com/questions/50459272/missingpluginexception-while-using-plugin-for-flutter
+- https://stackoverflow.com/questions/58350235/add-border-to-a-container-with-borderradius-in-flutter

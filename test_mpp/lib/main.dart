@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
                   children: const [
                     CustomFlutterButton(),
                     SizedBox(
-                      width: 70,
+                      width: 80,
                     ),
                     ContactButton(),
                   ],
@@ -49,21 +49,36 @@ class CustomFlutterButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      style: TextButton.styleFrom(
-          shape: const CircleBorder(), backgroundColor: Color(0xFF0188D6)),
-      onPressed: () => {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => PageContact(),
-          ),
+    return Container(
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(
+          Radius.circular(40),
         ),
-      },
-      child: const Padding(
-        padding: EdgeInsets.all(10),
-        child: FlutterLogo(
-          size: 40,
+        boxShadow: [
+          BoxShadow(
+            color: Color(0xFFCBD5DD),
+            spreadRadius: 2,
+            blurRadius: 10,
+            offset: Offset(0, 9),
+          )
+        ],
+      ),
+      child: TextButton(
+        style: TextButton.styleFrom(
+            shape: const CircleBorder(), backgroundColor: Color(0xFF0188D6)),
+        onPressed: () => {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => PageContact(),
+            ),
+          ),
+        },
+        child: const Padding(
+          padding: EdgeInsets.all(10),
+          child: FlutterLogo(
+            size: 40,
+          ),
         ),
       ),
     );
@@ -75,25 +90,40 @@ class ContactButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      style: TextButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(40),
-          ),
-          primary: Colors.white,
-          textStyle: TextStyle(fontSize: 23, fontWeight: FontWeight.w500),
-          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
-          backgroundColor: Colors.teal.shade500),
-      onPressed: () => {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => PageContact(),
-          ),
+    return Container(
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(
+          Radius.circular(40),
         ),
-      },
-      child: const Text(
-        'Page contact',
+        boxShadow: [
+          BoxShadow(
+            color: Color(0xFFCBD5DD),
+            spreadRadius: 3,
+            blurRadius: 10,
+            offset: Offset(0, 9),
+          )
+        ],
+      ),
+      child: TextButton(
+        style: TextButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(40),
+            ),
+            primary: Colors.white,
+            textStyle: TextStyle(fontSize: 23, fontWeight: FontWeight.w500),
+            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+            backgroundColor: Colors.teal.shade500),
+        onPressed: () => {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => PageContact(),
+            ),
+          ),
+        },
+        child: const Text(
+          'Page contact',
+        ),
       ),
     );
   }
@@ -179,8 +209,17 @@ class ContactCard extends StatelessWidget {
         width: 300,
         margin: EdgeInsets.symmetric(vertical: 10),
         decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: const [
+              BoxShadow(
+                color: Color(0xFFE3EBF1),
+                spreadRadius: 2,
+                blurRadius: 10,
+                offset: Offset(0, 8),
+              )
+            ],
             border: Border.all(
-              color: Color(0xFFDADADA),
+              color: Color(0xFFEEEEEE),
               width: 1,
             ),
             borderRadius: BorderRadius.circular(12)),
@@ -207,8 +246,8 @@ class ContactCard extends StatelessWidget {
         ),
       ),
       onTap: () async {
-        if (!await launchUrl(Uri.parse('https://www.google.com')))
-          throw 'Could not launch https://www.google.com';
+        const _url = 'https://www.google.com';
+        if (!await launchUrl(Uri.parse(_url))) throw 'Could not launch $_url';
       },
     );
   }
