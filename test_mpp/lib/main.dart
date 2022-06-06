@@ -10,11 +10,33 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Test Application MPP',
       home: Scaffold(
-        body: Center(
-          child: CustomFlutterButton(),
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ContactButtons(),
+              SizedBox(
+                height: 30,
+              ),
+              SizedBox(
+                height: 65,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: const [
+                    CustomFlutterButton(),
+                    SizedBox(
+                      width: 95,
+                    ),
+                    ContactButton(),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -26,16 +48,14 @@ class CustomFlutterButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        shape: const CircleBorder(),
-      ),
+    return TextButton(
+      style: TextButton.styleFrom(
+          shape: const CircleBorder(), backgroundColor: Color(0xFF0188D6)),
       onPressed: () => {print('test')},
       child: const Padding(
-        padding: EdgeInsets.all(15),
+        padding: EdgeInsets.all(10),
         child: FlutterLogo(
           size: 40,
-
         ),
       ),
     );
@@ -59,6 +79,24 @@ class ContactButton extends StatelessWidget {
       onPressed: () => {print('test')},
       child: const Text(
         'Page contact',
+      ),
+    );
+  }
+}
+
+class ContactButtons extends StatelessWidget {
+  const ContactButtons({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: const <Widget>[
+          CustomFlutterButton(),
+          ContactButton(),
+        ],
       ),
     );
   }
