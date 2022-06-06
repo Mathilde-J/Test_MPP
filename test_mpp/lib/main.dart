@@ -27,6 +27,14 @@ class ContactButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
+      style: TextButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(40),
+          ),
+          primary: Colors.white,
+          textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+          padding: EdgeInsets.symmetric(vertical: 13, horizontal: 30),
+          backgroundColor: Colors.teal.shade500),
       onPressed: () => {print('test')},
       child: const Text(
         'Page contact',
