@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
                   children: const [
                     CustomFlutterButton(),
                     SizedBox(
-                      width: 95,
+                      width: 70,
                     ),
                     ContactButton(),
                   ],
@@ -51,7 +51,14 @@ class CustomFlutterButton extends StatelessWidget {
     return TextButton(
       style: TextButton.styleFrom(
           shape: const CircleBorder(), backgroundColor: Color(0xFF0188D6)),
-      onPressed: () => {print('test')},
+      onPressed: () => {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PageContact(),
+          ),
+        ),
+      },
       child: const Padding(
         padding: EdgeInsets.all(10),
         child: FlutterLogo(
@@ -73,10 +80,17 @@ class ContactButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(40),
           ),
           primary: Colors.white,
-          textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-          padding: EdgeInsets.symmetric(vertical: 13, horizontal: 30),
+          textStyle: TextStyle(fontSize: 23, fontWeight: FontWeight.w500),
+          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
           backgroundColor: Colors.teal.shade500),
-      onPressed: () => {print('test')},
+      onPressed: () => {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PageContact(),
+          ),
+        ),
+      },
       child: const Text(
         'Page contact',
       ),
@@ -97,6 +111,19 @@ class ContactButtons extends StatelessWidget {
           CustomFlutterButton(),
           ContactButton(),
         ],
+      ),
+    );
+  }
+}
+
+class PageContact extends StatelessWidget {
+  const PageContact({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('page contact'),
       ),
     );
   }
