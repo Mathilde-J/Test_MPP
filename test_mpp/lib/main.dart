@@ -14,7 +14,27 @@ class MyApp extends StatelessWidget {
       title: 'Test Application MPP',
       home: Scaffold(
         body: Center(
-          child: Text('Hello'),
+          child: CustomFlutterButton(),
+        ),
+      ),
+    );
+  }
+}
+
+class CustomFlutterButton extends StatelessWidget {
+  const CustomFlutterButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        shape: const CircleBorder(),
+      ),
+      onPressed: () => {print('test')},
+      child: const Padding(
+        padding: EdgeInsets.all(15),
+        child: FlutterLogo(
+          size: 40,
         ),
       ),
     );
