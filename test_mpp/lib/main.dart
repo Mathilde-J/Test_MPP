@@ -137,56 +137,54 @@ class PageContact extends StatelessWidget {
       ),
       body: Container(
         padding: EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.grey,
-            width: 1,
+        child: Center(
+          child: Column(
+            children: [
+              ContactCard(),
+              ContactCard(),
+              ContactCard(),
+              ContactCard(),
+              ContactCard(),
+            ],
           ),
-        ),
-        child: Column(
-          children: const <Widget>[
-            Align(
-              child: Text(
-                'Dupont Jean-Pierre',
-                style: TextStyle(fontSize: 18),
-              ),
-            ),
-            Text(
-              '06-12-34-56-78',
-              style: TextStyle(fontSize: 14),
-            )
-          ],
         ),
       ),
     );
   }
 }
 
+class ContactCard extends StatelessWidget {
+  const ContactCard({Key? key}) : super(key: key);
 
-// Container(
-//         child: Padding(
-//           padding: EdgeInsets.all(20),
-//           child: Container(
-//             decoration: BoxDecoration(
-//               border: Border.all(
-//                 color: Colors.grey,
-//                 width: 1,
-//               ),
-//             ),
-//             child: Column(
-//               children: const <Widget>[
-//                 Align(
-//                   child: Text(
-//                     'Dupont Jean-Pierre',
-//                     style: TextStyle(fontSize: 18),
-//                   ),
-//                 ),
-//                 Text(
-//                   '06-12-34-56-78',
-//                   style: TextStyle(fontSize: 14),
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ),
-//       ),
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 300,
+      margin: EdgeInsets.symmetric(vertical: 10),
+      decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.grey,
+            width: 1,
+          ),
+          borderRadius: BorderRadius.circular(12)),
+      padding: EdgeInsets.all(20),
+      child: Column(
+        children: const <Widget>[
+          Align(
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child: Text(
+                'Dupont Jean-Pierre',
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+          ),
+          Text(
+            '06-12-34-56-78',
+            style: TextStyle(fontSize: 14),
+          ),
+        ],
+      ),
+    );
+  }
+}
